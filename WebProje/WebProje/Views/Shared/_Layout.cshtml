@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utku Bilgin</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="/lib/bootstrap/dist/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/jquery.mCustomScrollbar.min.css">
+
+</head>
+<body>
+    @RenderSection("MessageBox", false)
+    <header>
+        <div class="">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo"> <a href="#"><img src="/lib/bootstrap/dist/images/logo.png" alt="#"></a> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu">
+                                <ul class="menu-area-main">
+                                    <li>
+                                        <a href="/AnaSayfa/Index">About My City</a>
+                                    </li>
+                                    <li>
+                                        <a href="/AnaSayfa/AboutMe">About Me</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">xxxx</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">API</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Register</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">UV</a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <a href="#"><img src="/lib/bootstrap/dist/images/logo.png" alt="#" /></a>
+                    <ul class="contact_information">
+                        <li><span><img src="/lib/bootstrap/dist/images/location_icon.png" alt="#" /></span><span class="text_cont">Hatay<br>Antakya</span></li>
+                        <li><span><img src="/lib/bootstrap/dist/images/phone_icon.png" alt="#" /></span><span class="text_cont">0539*****01<br>0539*****01</span></li>
+                        <li><span><img src="/lib/bootstrap/dist/images/mail_icon.png" alt="#" /></span><span class="text_cont">utkubilgin47@gmail.com<br>utkubilgin.sau@gmail.com</span></li>
+                    </ul>
+                    <ul class="social_icon">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer_links">
+                        <h3>Quick link</h3>
+                        <ul>
+                            <li><a href="/AnaSayfa/BlogEntries"><i class="fa fa-angle-right" aria-hidden="true"></i> My City</a></li>
+                            <li><a href="/AnaSayfa/AboutMe"><i class="fa fa-angle-right" aria-hidden="true"></i> About Me</a></li>
+                            <li><a href="/AnaSayfa/Login"><i class="fa fa-angle-right" aria-hidden="true"></i> Login</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Api</a></li>
+                            <li><a href="/AnaSayfa/MyProject"><i class="fa fa-angle-right" aria-hidden="true"></i> My Project</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Testimonial</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer_links">
+                        <h3>Sosyal Hesaplar</h3>
+                        <ol>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">İnstagram</a></li>
+                            <li><a href="#">WhatsApp</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Linked</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer_links">
+                        <h3>Contact us</h3>
+                        <form action="index.html">
+                            <fieldset>
+                                <div class="field">
+                                    <input type="text" name="name" placeholder="Your Name" required="" />
+                                </div>
+                                <div class="field">
+                                    <input type="email" name="email" placeholder="Email" required="" />
+                                </div>
+                                <div class="field">
+                                    <input type="text" name="subject" placeholder="Subject" required="" />
+                                </div>
+                                <div class="field">
+                                    <textarea placeholder="Message"></textarea>
+                                </div>
+                                <div class="field">
+                                    <div class="center">
+                                        <button class="reply_bt">Send</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="cpy">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Copyright © 2021 Design by <a href="#">Utku Bilgin</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Javascript files-->
+    <script src="/lib/bootstrap/dist/js/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/popper.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/jquery-3.0.0.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/plugin.js"></script>
+    <!-- Scrollbar Js Files -->
+    <script src="/lib/bootstrap/dist/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/custom.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
