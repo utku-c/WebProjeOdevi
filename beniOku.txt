@@ -1,0 +1,17 @@
+
+
+======================== 12.12.2021 =====================
+	
+
+	Web Programlama Dersi Proje ödevi
+	Öğrenci : Utku Bilgin 
+	Öğr No	: G191210100
+	
+ 	Ödevde Yapılacaklar;
+		-> Kişisel Web sitesi
+		-> Dinamik olarak yorum yapabilme
+		-> Login logaut işlemleri
+		-> İçerik ekleme Silme (sadece admin)
+
+	1.gün => Text dosyası eklendi
+	2.gün => Ödev dökümanı eklendi
