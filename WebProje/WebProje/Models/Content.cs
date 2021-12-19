@@ -14,7 +14,7 @@ namespace WebProje.Models
         public String Aciklama { get; set; }
         public String ContentResimUrl { get; set; }
 
-        
+
         public int? CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public Kategori Category { get; set; }

@@ -1,22 +1,27 @@
-﻿@model IEnumerable<WebProje.Models.Content>
+﻿
+@using Microsoft.AspNetCore.Identity
 
-@* Kategoryi datadan alıp model ile yazdırıyoruz *@
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+@model IEnumerable<WebProje.Models.Content>
 @{
-    List<Kategori> categories = (List<Kategori>)ViewData["categories"];
-}
+    List<Comment> yorum = (List<Comment>)ViewData["comment"];
+    var CommentCount = ViewData["commentCount"];
+    int sayac = 0;
 
+    int yildizSayisi = (int)ViewData["yildizSayisi"];
+    //int yorumPuan = (int)ViewData["yorumPuan"];
+
+}
 
 
 
 <link rel="stylesheet" href="/lib/bootstrap/dist/assets/css/sty.css">
 
-@section MessageBox {
-    <div class="alert alert-success text-center m-3">
-        Açken sen sen değilsin haydi bir bilet al Hatay'a
-    </div>
-}
-
-<!-- ŞEHRİM YAZISI-->
+<!-- Şehrim -->
 <section class="call-to-action">
     <div class="container">
         <div class="row">
@@ -24,7 +29,7 @@
                 <div class="main-content">
                     <div class="row">
                         <div class="col-lg-8">
-                            <h4>ŞEHRİM </h4>
+                            <h4>ŞEHRİMM</h4>
                         </div>
                         <div class="col-lg-4">
                             <div class="main-button">
@@ -38,170 +43,325 @@
     </div>
 </section>
 
-<style>
-    .devamınıoku a:hover {
-        background-color: lightgrey;
-        font-size: 15px;
-        font-weight: 700;
-        border-radius: 8px 8px 8px 8px;
-        padding: 8px;
-        margin: -7px 0px
-    }
-</style>
 
-<section class="blog-posts grid-system">
+<!-- İÇERİKK -->
+<section class="blog-posts pt-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="sidebar">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <div class="sidebar-item categories">
-                                <div class="sidebar-heading">
-                                    <h2>KATEGORİLER</h2>
-                                </div>
-
-                                <ul>
-
-
-                                    @foreach (var item in categories)
-                                    {
-                                        <li><a href="/AnaSayfa/Index/@item.Id">@item.CategoryName</a></li>
-                                    }
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-10">
-                            <div class="sidebar-item recent-posts">
-                                <div class="sidebar-heading">
-                                    <h2>SON GÖNDERİLER</h2>
-                                </div>
-                                <div class="content">
-                                    <ul>
-                                        <li>
-                                            <a href="post-details.html">
-                                                <h5>Vestibulum id turpis porttitor sapien facilisis scelerisque</h5>
-                                                <span>May 31, 2020</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="post-details.html">
-                                                <h5>Suspendisse et metus nec libero ultrices varius eget in risus</h5>
-                                                <span>May 28, 2020</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="post-details.html">
-                                                <h5>Swag hella echo park leggings, shaman cornhole ethical coloring</h5>
-                                                <span>May 14, 2020</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-10">
-                            <div class="sidebar-item tags">
-                                <div class="sidebar-heading">
-                                    <h2>Tag Clouds</h2>
-                                </div>
-                                <div class="content">
-                                    <ul>
-                                        <li><a href="#">Lifestyle</a></li>
-                                        <li><a href="#">Creative</a></li>
-                                        <li><a href="#">HTML5</a></li>
-                                        <li><a href="#">Inspiration</a></li>
-                                        <li><a href="#">Motivation</a></li>
-                                        <li><a href="#">PSD</a></li>
-                                        <li><a href="#">Responsive</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        @*@await Html.PartialAsync("_Category",)*@
-                    </div>
-                </div>
-
-            </div>
             <div class="col-lg-8">
-                <div class="all-blog-posts">
+                <div class="all-blog-posts container">
                     <div class="row">
-
-                        @if (Model.Count() == 0)
-                        {
-                            <div class="col-lg-10  text-center" style="background-color:red; font-weight:bold; color:white; border-radius:8px;font-size:20px; padding:20px">
-                                Bu Kategoride şuan için bir içerik yoktur
-                            </div>
-
-                        }
-                        else
-                        {
-                            foreach (var item in Model)
+                        <div class="col-lg-12 container p-2">
+                            @foreach (var item in Model)
                             {
-
-                                <div class="col-lg-6">
-                                    <div class="blog-post">
-                                        <div class="blog-thumb">
-                                            <img src="@item.ContentResimUrl" alt="">
-
-                                        </div>
-                                        <div class="down-content">
-                                            <span>@item.KonuBasligi</span>
-                                            <a asp-controller="AnaSayfa" asp-action="BlogEntries" asp-route-id="@item.Id"><h4>Detaylar için tıkla</h4></a>
-                                            <ul class="post-info">
-                                                <li><a href="/Anasayfa/AboutMe">Admin</a></li>
-                                                <li><a href="#">May 22, 2020</a></li>
-                                                <!--Yoruma tıklandığında indexin hemen altındaki yorumlar seçeneğine gidecek-->
-                                                <li><a href="/AnaSayfa/Index/@item.Id/#yorum">Comments</a></li>
-                                            </ul>
-                                            <div>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                </p>
-
-                                                <p class="center devamınıoku">
-                                                    <a style="color:mediumblue" asp-controller="AnaSayfa" asp-action="Index" asp-route-id="@item.Id">Devamını oku</a>
-                                                </p>
-                                            </div>
-                                            <div class="post-options">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <ul class="post-tags">
-                                                            <li><i class="fa fa-tags"></i></li>
-                                                            <li><a href="#">@item.Aciklama</a></li>
-                                                        </ul>
-                                                        <ul class="post-tags">
-                                                            <li><i class="fa fa-tags"></i></li>
-                                                            <li><a href="#">Hatay-Antakya</a></li>
-                                                        </ul>
-                                                    </div>
+                                <div class="blog-post">
+                                    <div class="blog-thumb">
+                                        <img src="@(item.ContentResimUrl)" alt="">
+                                    </div>
+                                    <div class="down-content">
+                                        <span>@item.KonuBasligi</span>
+                                        <a href="#"><h4>@item.Aciklama</h4></a>
+                                        <ul class="post-info">
+                                            <li><a href="/AnaSayfa/AboutMe">Admin</a></li>
+                                            <li><a href="#">May 31, 2020</a></li>
+                                            <li><a href="#yorum">12 Comments</a></li>
+                                        </ul>
+                                        <br />
+                                        <p>@item.Icerik <a rel="nofollow" href="#" target="_parent">Hatayda Nerde Yenir</a></p>
+                                        <div class="post-options">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <ul class="post-tags">
+                                                        <li><i class="fa fa-tags"></i></li>
+                                                        <li><a href="#">Hatay</a>,</li>
+                                                        <li><a href="#">Antakya</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-6">
+                                                    <ul class="post-share">
+                                                        <li><i class="fa fa-share-alt"></i></li>
+                                                        <li><a href="#">Facebook</a>,</li>
+                                                        <li><a href="#"> Twitter</a></li>
+                                                    </ul>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <h2 class="m-2" style="font-size:26px;font-weight:900;color:black;">Yıldız Puanı</h2>
+
+                                        <div class="container">
+
+                                            @for (int i = 0; i < 10; i++)
+                                            {
+
+                                                if (i < @yildizSayisi)
+                                                {
+
+                                                    <span class="fa fa-star" style="color:orangered;font-size:18px"></span>
+
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star" style="color:lightgray;font-size:18px"></span>
+                                                }
+                                            }
+
+
                                         </div>
                                     </div>
                                 </div>
                             }
-                        }
-
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2">
+
+            <div class="col-lg-4">
+                <h2 class="m-2" style="font-size:26px;font-weight:900;color:black;">Son Yorumlar</h2>
+
+                @if (CommentCount.Equals(0))
+                {
+                    <div class="container" style="padding:20px;background-color:red;border-radius:10px; margin-top:10px">
+
+                        <p class="center" style="font-size:18px; font-weight:700;color:white;">
+                            Henüz yorum yok
+                        </p>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="list-group">
+
+                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small>3 days ago</small>
+                            </div>
+                            <p class="mb-1">Some placeholder content in a paragraph.</p>
+                            <small>Devamını oku</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small class="text-muted">3 days ago</small>
+                            </div>
+                            <p class="mb-1">Some placeholder content in a paragraph.</p>
+                            <small class="text-muted">Devamını oku.</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small class="text-muted">3 days ago</small>
+                            </div>
+                            <p class="mb-1">Some placeholder content in a paragraph.</p>
+                            <small class="text-muted">Devamını oku.</small>
+                        </a>
+                    </div>
+
+
+                }
 
             </div>
         </div>
-        <div class="col-lg-12">
-            <ul class="page-numbers">
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-            </ul>
-        </div>
     </div>
 </section>
+
+
+
+<!-- Yorumlarr -->
+<section class="layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="yorum" class="heading" style="padding-left: 15px;padding-right: 15px;">
+                    <h4>Yorum Sayısı &nbsp;/ @CommentCount</h4>
+
+                </div>
+
+            </div>
+        </div>
+        @if (CommentCount.Equals(0))
+        {
+            <div class="container" style="padding:50px;background-color:red;border-radius:10px; margin-top:30px">
+                <p class="center" style="font-size:18px; font-weight:700;color:white;">
+                    Henüz yorum yok ilk yorumu sen yap!
+                </p>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+
+                @foreach (var item in yorum)
+                {
+                    <div class="container" style="background-color:lightgrey; height:1.5px">
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="full comment_blog_line" style=" padding: 10px;padding-bottom:20px">
+                            @if (sayac % 2 == 0)
+                            {
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <img src="/lib/bootstrap/dist/images/logo.png" alt="#" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="full contact_text">
+                                            <h3 style="color:orange">Anonymous</h3>
+
+                                            <small>Posted on Jan 10 / 2017 at 06:53 am</small>
+                                            <br />
+                                            <div style="border-radius: 12px; background-color: lightpink; padding: 24px;margin-top:15px">
+                                                <p class="contentYorum" style="color:black; font-weight:800;font-size:20px">
+                                                    @item.Yorum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="row">
+                                    <div class="col-md-1">
+
+                                    </div>
+                                    <div class="col-md-1">
+                                        <img src="/lib/bootstrap/dist/images/logo.png" alt="#" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="full contact_text">
+                                            <h3 style="color:orangered">Anonymous</h3>
+                                            <small>Posted on Jan 10 / 2017 at 06:53 am</small>
+
+                                            <div style="border-radius: 12px; background-color: lightpink; padding: 24px; margin-top: 15px ">
+                                                <p class="contentYorum" style="color: black;font-weight:800; font-size: 20px">
+                                                    @item.Yorum
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    sayac++;
+
+                }
+                <div class="container" style="background-color:lightgrey; height:1.5px">
+
+                </div>
+
+            </div>
+        }
+
+
+        <div class="row margin_top_30">
+            <div class="col-md-12 margin_top_30">
+                <div class="heading" style="padding-left: 15px;padding-right: 15px;">
+                    <h4>Hey! Yorum yapmayı unutma?</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full comment_form">
+                    <form action="">
+                        <fieldset>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" value="Anonymous" disabled name="name" placeholder="Name" required="" />
+                                        <input type="text" name="yorumPuan" placeholder="Puan Verin" />
+                                        <input type="email" name="email" placeholder="Email" required="" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <textarea placeholder="Comment"></textarea>
+                                    </div>
+                                </div>
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    <div class="row margin_top_30">
+                                        <div class="col-md-12">
+                                            <div class="center">
+                                                <button>Send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+                                else
+                                {
+                                    <div class="row margin_top_30">
+                                        <div class="col-md-12">
+                                            <div class="center">
+                                                <button disabled>Send</button>
+                                            </div>
+                                            <br />
+                                            
+                                            <div class="alert alert-success text-center m-2">
+                                                <a href="/AnaSayfa/Login">
+                                                    <p class="center" style="color:red;font-size:24px;font-weight:700;">
+                                                        !!&nbsp;&nbsp; Yorum yapabilmek için giriş yapınız
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="full comment_blog_line">
+        <div class="row ">
+            <div class="col-md-1 ">
+
+            </div>
+            <div class="col-md-1" style="border-left: 5px solid #cfa671;">
+                <img src="/lib/bootstrap/dist/images/c_1.png" alt="#" />
+            </div>
+            <div class="col-md-7">
+                <div class="full contact_text">
+                    <h3>Veniam</h3>
+                    <h4>Posted on Jan 10 / 2017 at 06:53 am</h4>
+                    <p>
+                        @item.Yorum
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>*@

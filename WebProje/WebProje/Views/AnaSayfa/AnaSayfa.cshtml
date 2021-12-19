@@ -1,0 +1,203 @@
+﻿
+@model IEnumerable<WebProje.Models.Content>
+@{
+
+    List<Kategori> categories = (List<Kategori>)ViewData["categories"];
+}
+
+
+<link rel="stylesheet" href="/lib/bootstrap/dist/assets/css/sty.css">
+
+@section MessageBox {
+    <div class="alert alert-success text-center m-3">
+        Açken sen sen değilsin haydi bir bilet al Hatay'a
+    </div>
+}
+
+<!-- ŞEHRİM YAZISI-->
+<section class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-content">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h4>ŞEHRİM </h4>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="main-button">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .devamınıoku a:hover {
+        background-color: lightblue;
+    }
+</style>
+
+<section class="blog-posts grid-system">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="sidebar-item categories">
+                                <div class="sidebar-heading">
+                                    <h2>KATEGORİLER</h2>
+                                </div>
+
+                                <ul>
+
+
+                                    @foreach (var item in categories)
+                                    {
+                                        <li><a href="/AnaSayfa/AnaSayfa/@item.Id">@item.CategoryName</a></li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="sidebar-item recent-posts">
+                                <div class="sidebar-heading">
+                                    <h2>SON GÖNDERİLER</h2>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            <a href="post-details.html">
+                                                <h5>Vestibulum id turpis porttitor sapien facilisis scelerisque</h5>
+                                                <span>May 31, 2020</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="post-details.html">
+                                                <h5>Suspendisse et metus nec libero ultrices varius eget in risus</h5>
+                                                <span>May 28, 2020</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="post-details.html">
+                                                <h5>Swag hella echo park leggings, shaman cornhole ethical coloring</h5>
+                                                <span>May 14, 2020</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-10">
+                            <div class="sidebar-item tags">
+                                <div class="sidebar-heading">
+                                    <h2>Tag Clouds</h2>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li><a href="#">Lifestyle</a></li>
+                                        <li><a href="#">Creative</a></li>
+                                        <li><a href="#">HTML5</a></li>
+                                        <li><a href="#">Inspiration</a></li>
+                                        <li><a href="#">Motivation</a></li>
+                                        <li><a href="#">PSD</a></li>
+                                        <li><a href="#">Responsive</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @*@await Html.PartialAsync("_Category",)*@
+                    </div>
+                </div>
+
+            </div>
+            
+                    <div class="col-lg-8">
+                    <div class="all-blog-posts">
+                        <div class="row">
+
+                            @if (Model.Count() == 0)
+                            {
+                                <div class="col-lg-10  text-center" style="background-color:red; font-weight:bold; color:white; border-radius:8px;font-size:20px; padding:20px">
+                                    Bu Kategoride şuan için bir içerik yoktur
+                                </div>
+
+                            }
+                            else
+                            {
+                                foreach (var item in Model)
+                                {
+
+                                    <div class="col-lg-6">
+                                        <div class="blog-post">
+                                            <div class="blog-thumb">
+                                                <img src="@item.ContentResimUrl" alt="">
+
+                                            </div>
+                                            <div class="down-content">
+                                                <span>@item.KonuBasligi</span>
+                                                <a asp-controller="AnaSayfa" asp-action="Index" asp-route-id="@item.Id"><h4>Detaylar için tıkla</h4></a>
+                                                <ul class="post-info">
+                                                    <li><a href="/Anasayfa/AboutMe">Admin</a></li>
+                                                    <li><a href="#">May 22, 2020</a></li>
+                                                    <!--Yoruma tıklandığında indexin hemen altındaki yorumlar seçeneğine gidecek-->
+                                                    <li><a href="/AnaSayfa/Index/@item.Id/#yorum">Comments</a></li>
+                                                </ul>
+                                                <div>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                    </p>
+
+                                                    <p class="center devamınıoku m-3">
+                                                        <a style="color:mediumblue" class="disabled">Devamını oku</a>
+                                                    </p>
+                                                </div>
+                                                <div class="post-options">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <ul class="post-tags">
+                                                                <li><i class="fa fa-tags"></i></li>
+                                                                <li><a href="#">@item.Aciklama</a></li>
+                                                            </ul>
+                                                            <ul class="post-tags">
+                                                                <li><i class="fa fa-tags"></i></li>
+                                                                <li><a href="#">Hatay-Antakya</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <ul class="page-numbers">
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</section>

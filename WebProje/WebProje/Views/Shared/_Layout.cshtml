@@ -20,9 +20,13 @@
 
 </head>
 <body>
+    
+
     @RenderSection("MessageBox", false)
+
     <header>
         <div class="">
+
             <div class="row">
                 <div class="col-lg-3">
                     <div class="full">
@@ -37,42 +41,38 @@
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
                                     <li>
-                                        <a href="/AnaSayfa/Index">About My City</a>
+                                        <a class="navbar-brand" asp-area="" asp-controller="AnaSayfa" asp-action="AnaSayfa">AnaSayfa</a>
                                     </li>
                                     <li>
                                         <a href="/AnaSayfa/AboutMe">About Me</a>
                                     </li>
+                                    @*<li>
+                                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebProje</a>
+                                    </li>*@
                                     <li>
-                                        <a href="#">xxxx</a>
+                                        <a class="navbar-brand" asp-area="" asp-controller="AnaSayfa" asp-action="Login">Log In - Log Out</a>
                                     </li>
                                     <li>
-                                        <a href="#">API</a>
+                                        
+                                        @*<partial name="_LoginPartial.cshtml" />*@
                                     </li>
-                                    <li>
-                                        <a href="#">Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">UV</a>
-                                    </li>
-
                                 </ul>
                             </nav>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
 
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            @RenderSection("MessageBox2", false)
         </main>
     </div>
-
 
     <footer>
         <div class="container">
@@ -165,5 +165,61 @@
     <script src="/lib/bootstrap/dist/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="/lib/bootstrap/dist/js/custom.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @RenderSection("JavaScript", false)
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebProje</a>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial.cshtml" />
+                </div>
+            </div>
+        </nav>
+    </header>*@

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebProje.Data.Migrations
+namespace WebProje.Migrations
 {
-    public partial class ProjeWeb : Migration
+    public partial class ikinci : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebProje.Controllers
+namespace WebProje.Models
 {
-    public class CommentController
+    public class UserDbContext
     {
     }
 }

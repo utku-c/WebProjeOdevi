@@ -21,9 +21,9 @@ namespace WebProje.Models
         public String ResimUrl { get; set; }
         public String Aciklama { get; set; }
 
-        public int? AuthorityId { get; set; }
-        [ForeignKey("AuthorityId")]
-        public Authority Authority { get; set; }
+        //public int? AuthorityId { get; set; }
+        //[ForeignKey("AuthorityId")]
+        //public Authority Authority { get; set; }
 
         public int? CommetId { get; set; }
         [ForeignKey("CommetId")]

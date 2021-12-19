@@ -11,6 +11,7 @@ namespace WebProje.Models
         public int Id { get; set; }
         public String Yorum { get; set; }
         public int YorumPuan { get; set; }
+        public DateTime YorumTarih { get; set; }
 
         public int? ContentId { get; set; }
         [ForeignKey("ContentId")]

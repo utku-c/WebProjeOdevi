@@ -1,25 +1,12 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebProje.Data.Migrations
+namespace WebProje.Migrations
 {
-    public partial class ProjeWeb2 : Migration
+    public partial class ucuncu : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Authority",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    yetki = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Authority", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Kategori",
                 columns: table => new
@@ -64,6 +51,7 @@ namespace WebProje.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Yorum = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     YorumPuan = table.Column<int>(type: "int", nullable: false),
+                    YorumTarih = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ContentId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -90,18 +78,11 @@ namespace WebProje.Data.Migrations
                     KayitTarih = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ResimUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AuthorityId = table.Column<int>(type: "int", nullable: true),
                     CommetId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_User_Authority_AuthorityId",
-                        column: x => x.AuthorityId,
-                        principalTable: "Authority",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_User_Comment_CommetId",
                         column: x => x.CommetId,
@@ -121,11 +102,6 @@ namespace WebProje.Data.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_User_AuthorityId",
-                table: "User",
-                column: "AuthorityId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_User_CommetId",
                 table: "User",
                 column: "CommetId");
@@ -135,9 +111,6 @@ namespace WebProje.Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "User");
-
-            migrationBuilder.DropTable(
-                name: "Authority");
 
             migrationBuilder.DropTable(
                 name: "Comment");
