@@ -14,10 +14,8 @@
 
     int yildizSayisi = (int)ViewData["yildizSayisi"];
     //int yorumPuan = (int)ViewData["yorumPuan"];
-
+    string admin = "utku.bilgin@ogr.sakarya.edu.tr";
 }
-
-
 
 <link rel="stylesheet" href="/lib/bootstrap/dist/assets/css/sty.css">
 
@@ -64,7 +62,7 @@
                                         <ul class="post-info">
                                             <li><a href="/AnaSayfa/AboutMe">Admin</a></li>
                                             <li><a href="#">May 31, 2020</a></li>
-                                            <li><a href="#yorum">12 Comments</a></li>
+                                            <li><a href="#yorum">@CommentCount Comments</a></li>
                                         </ul>
                                         <br />
                                         <p>@item.Icerik <a rel="nofollow" href="#" target="_parent">Hatayda Nerde Yenir</a></p>
@@ -192,7 +190,7 @@
         {
             <div class="row">
 
-                @foreach (var item in yorum)
+                @foreach (var itemx in yorum)
                 {
                     <div class="container" style="background-color:lightgrey; height:1.5px">
 
@@ -209,11 +207,29 @@
                                         <div class="full contact_text">
                                             <h3 style="color:orange">Anonymous</h3>
 
-                                            <small>Posted on Jan 10 / 2017 at 06:53 am</small>
+                                            <small>@itemx.YorumTarih</small>
                                             <br />
                                             <div style="border-radius: 12px; background-color: lightpink; padding: 24px;margin-top:15px">
                                                 <p class="contentYorum" style="color:black; font-weight:800;font-size:20px">
-                                                    @item.Yorum
+                                                    @itemx.Yorum
+                                                </p>
+                                                <br />
+                                                <p>
+                                                    <span>Kullanıcı Puanı&nbsp;&nbsp;</span>   
+                                                    @for (int i = 0; i < 10; i++)
+                                                    {
+
+                                                        if (i < itemx.YorumPuan)
+                                                        {
+
+                                                            <span class="fa fa-star" style="color:orangered;font-size:18px"></span>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="fa fa-star" style="color:lightgray;font-size:18px"></span>
+                                                        }
+                                                    }
                                                 </p>
                                             </div>
                                         </div>
@@ -221,7 +237,15 @@
                                     <div class="col-md-1">
 
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-1">
+
+                                    </div>
+                                    <div class="col-md-1">
+
+                                        @if (@UserManager.GetUserName(User) == admin)
+                                        {
+                                            <a class="btn btn-danger" asp-action="IndexDelete" asp-route-id="@itemx.Id">Delete</a>
+                                        }
 
                                     </div>
                                 </div>
@@ -238,18 +262,43 @@
                                     <div class="col-md-8">
                                         <div class="full contact_text">
                                             <h3 style="color:orangered">Anonymous</h3>
-                                            <small>Posted on Jan 10 / 2017 at 06:53 am</small>
+                                            <small>@itemx.YorumTarih</small>
 
                                             <div style="border-radius: 12px; background-color: lightpink; padding: 24px; margin-top: 15px ">
                                                 <p class="contentYorum" style="color: black;font-weight:800; font-size: 20px">
-                                                    @item.Yorum
+                                                    @itemx.Yorum
+                                                </p>
+                                                <br />
+
+                                                <p>
+                                                    <span>Kullanıcı Puanı&nbsp;&nbsp;</span>
+                                                    @for (int i = 0; i < 10; i++)
+                                                    {
+
+                                                        if (i < itemx.YorumPuan)
+                                                        {
+
+                                                            <span class="fa fa-star" style="color:orangered;font-size:18px"></span>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="fa fa-star" style="color:lightgray;font-size:18px"></span>
+                                                        }
+                                                    }
                                                 </p>
                                             </div>
 
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-1">
 
+                                    </div>
+                                    <div class="col-md-1">
+                                        @if (@UserManager.GetUserName(User) == admin)
+                                        {
+                                            <a class="btn btn-danger" asp-action="IndexDelete" asp-route-id="@itemx.Id">Delete</a>
+                                        }
                                     </div>
                                 </div>
                             }
@@ -279,22 +328,13 @@
                     <form action="">
                         <fieldset>
                             <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" value="Anonymous" disabled name="name" placeholder="Name" required="" />
-                                        <input type="text" name="yorumPuan" placeholder="Puan Verin" />
-                                        <input type="email" name="email" placeholder="Email" required="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <textarea placeholder="Comment"></textarea>
-                                    </div>
-                                </div>
                                 @if (SignInManager.IsSignedIn(User))
                                 {
                                     <div class="row margin_top_30">
                                         <div class="col-md-12">
                                             <div class="center">
-                                                <button>Send</button>
+
+                                                <button asp-action="YorumYap" type="submit" class="btn btn-primary">Yorum Yap</button>
                                             </div>
                                         </div>
                                     </div>
@@ -305,14 +345,14 @@
                                     <div class="row margin_top_30">
                                         <div class="col-md-12">
                                             <div class="center">
-                                                <button disabled>Send</button>
+                                                <button disabled type="submit" class="btn btn-primary">Yorum İçin Giriş Yap</button>
                                             </div>
                                             <br />
-                                            
+
                                             <div class="alert alert-success text-center m-2">
                                                 <a href="/AnaSayfa/Login">
                                                     <p class="center" style="color:red;font-size:24px;font-weight:700;">
-                                                        !!&nbsp;&nbsp; Yorum yapabilmek için giriş yapınız
+                                                        !!&nbsp;&nbsp; GİRİŞ yapabilmek için BURAYA TIKLA
                                                     </p>
                                                 </a>
                                             </div>

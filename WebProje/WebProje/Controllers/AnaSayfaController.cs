@@ -1,17 +1,22 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿//using Microsoft.Ajax.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Polly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebProje.Data;
 using WebProje.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace WebProje.Controllers
 {
     
     public class AnaSayfaController : Controller
     {
+        const string SessionAge = "_id";
+        const string Indexx = "_id";
         private readonly WebProjeContext _db;
 
         public AnaSayfaController(WebProjeContext db)
@@ -42,27 +47,78 @@ namespace WebProje.Controllers
             }
             
         }
+        public async Task<IActionResult> IndexDelete(int Id)
+        {
+            var comment = await _db.Comment.FindAsync(Id);
+            _db.Remove(comment);
+            await _db.SaveChangesAsync();
+            // yaptığımız değişiklikleri kaydediyoruz
 
+            return RedirectToAction(nameof(AnaSayfa));
+            // Bizi tekrar index sayfasına döndürecek
+
+        }
         
         
+        public IActionResult YorumYap()
+        {
+            Comment comment = new Comment();
+
+            /// Bu alınan bilgi 
+            ViewBag.Age = HttpContext.Session.GetInt32(SessionAge);
+            
+            
+            string saat = DateTime.Now.Date.ToString();
+            ViewBag.saat = saat;
+
+            return View(comment);
+        }
+        public async Task<IActionResult> YorumCreate(Comment comment)
+        {
+            
+            if (comment.Id == 0)
+            {
+                await _db.AddAsync(comment);
+            }
+            //else
+            //{
+            //    _db.Update(comment);
+            //}
+               
+
+            await _db.SaveChangesAsync();
+
+            string p = HttpContext.Session.GetInt32(SessionAge).ToString();
+
+            return Redirect("/AnaSayfa/Index/"+p+"");
+            // Bizi tekrar index sayfasına döndürecek
+
+        }
         public IActionResult Index(int id)
         {
-
-
             var icerik = from p in _db.Content
                          where (p.Id == id)
-
                          select p;
+
+
+            //index Sayfasının id sini Yorum sayfasına göndermeye çalışacağız
+            /// Bu gönderilen Bilgi
+            HttpContext.Session.SetInt32(SessionAge, id);
+            HttpContext.Session.SetInt32(Indexx, id);
+
+            //////-----
+
+
+
+            ViewBag.YorumEkle =  new Comment();
 
             List<Comment> commentcontent = (from p in _db.Comment
                                             where (p.ContentId == id)
                                             select p).ToList();
             //yorumları alıyoruz
             ViewData["comment"] = commentcontent;
-
             // yorum sayısını alıyoruz
             ViewData["commentCount"] = commentcontent.Count();
-
             // yorum puanlamasını alıyoruz
             List<int> yorumPuan = (from p in _db.Comment
                                    where (p.ContentId == id)
@@ -86,8 +142,9 @@ namespace WebProje.Controllers
 
             return View(icerik);
 
-            
+
         }
+        
 
         public IActionResult AboutMe()
         {

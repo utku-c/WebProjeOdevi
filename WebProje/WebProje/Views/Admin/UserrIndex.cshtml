@@ -1,0 +1,42 @@
+﻿@model IEnumerable<User>
+
+
+
+
+<h1 style="font-weight:700;">İçerik Güncelleme ve Silme İşlemi</h1>
+<table class="table shadow m-3" style="background-color:lightgray">
+    <thead>
+
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Email</th>
+            <th scope="col">DogumTarih</th>
+            <th scope="col">KayitTarih</th>
+            <th scope="col">ResimUrl</th>
+            <th scope="col">Aciklama</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <th scope="row">@item.Ad</th>
+                <th scope="row">@item.Soyad</th>
+                <th scope="row">@item.Email</th>
+                <th scope="row">@item.DogumTarih</th>
+                <th scope="row">@item.KayitTarih</th>
+                <th scope="row">@item.ResimUrl</th>
+                <th scope="row">@item.Aciklama</th>
+
+                <td>
+                    <a class="btn btn-danger" asp-action="UserDelete" asp-route-id="@item.Id">Delete</a>
+                    <a class="btn btn-secondary" asp-action="User" asp-route-id="@item.Id">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

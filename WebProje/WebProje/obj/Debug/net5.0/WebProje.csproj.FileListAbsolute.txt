@@ -167,3 +167,14 @@ C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\V
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\Index.cshtml.g.cs
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\AboutMe.cshtml.g.cs
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\Login.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\Content.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\Api.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\Kategori.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\ContentIndex.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\KategoriIndex.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\User.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\UserrIndex.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\YorumCreate.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\YorumYap.cshtml.g.cs
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\bin\Debug\net5.0\Polly.dll

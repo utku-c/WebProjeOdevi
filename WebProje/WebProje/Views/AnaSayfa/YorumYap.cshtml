@@ -1,0 +1,43 @@
+﻿<br />
+<br />
+<br />
+
+@model Comment
+@{
+    string dt = ViewBag.saat;
+    int id = ViewBag.Age;
+}
+<div class="container shadow p-3" style="background-color:lightgray;border-radius:12px;" >
+
+    <form method="post" asp-action="YorumCreate" autocomplete="off">
+        <div class="container shadow col-lg-8" style="border-radius: 20px; background-color: #f2f2f2; padding: 20px;">
+            <div class="form-group">
+                <label style="font-size:18px">Yorumunuz</label>
+                <input type="hidden" asp-for="Id" />
+                <input type="text" asp-for="Yorum" placeholder="Yorumunuz..." class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Yorum Puanı</label>
+                <input type="text" asp-for="YorumPuan" placeholder="Puanınız..." class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Yorum Tarihi</label>
+                <input style="visibility: hidden" type="text" asp-for="YorumTarih" value="@dt" placeholder="YorumTarihi" class="form-control" />
+            </div>
+            <div class="form-group" >
+                <label>Bu Alana dokunmayınız</label>
+                <input style="visibility: hidden" type="text" asp-for="ContentId" value="@id" placeholder="Content Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                @if (Model.Id == 0)
+                {
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                }
+            </div>
+        </div>
+    </form>
+</div>

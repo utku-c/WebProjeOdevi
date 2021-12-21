@@ -18,6 +18,8 @@ namespace WebProje.Data
         public DbSet<Comment> Comment { get; set; }
 
         public DbSet<Kategori> Kategori { get; set; }
+        public object ApplicationUser { get; internal set; }
+
         public WebProjeContext(DbContextOptions<WebProjeContext> options)
             : base(options)
         {

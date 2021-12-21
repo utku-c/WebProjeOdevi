@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@model IEnumerable<Content>
+   
+
+    @{
+        string admin = "utku.bilgin@ogr.sakarya.edu.tr";
+    }
+
+    @if (@UserManager.GetUserName(User) == admin)
+    {
+        <br />
+        
+        <div class="container m-3 shadow" style="background-color:lightgray">
+            <h1>Yapmak İstediğin İşlemi Seç</h1>
+            <ul>
+                <li class="m-2">
+                    <a class="btn btn-danger" asp-action="Content" asp-route-id="null">İçerik Ekle</a>
+                </li>
+                <li class="m-2">
+                    <a class="btn btn-danger" asp-action="ContentIndex" asp-route-id="null">İçerik Güncelleme ve Silme</a>
+                </li>
+
+                <li class="m-2">
+                    <a class="btn btn-danger" asp-action="Kategori" asp-route-id="null">Kategori Ekle</a>
+                </li>
+                <li class="m-2">
+                    <a class="btn btn-danger" asp-action="KategoriIndex" asp-route-id="null">Kategori Sil - Güncelle</a>
+                </li>
+                <li class="m-2">
+                    <a class="btn btn-danger" asp-action="Content" asp-route-id="null">Yorum Sil</a>
+                </li>
+                <li class="m-2">
+                    <a class="btn btn-danger" asp-action="User" asp-route-id="null">Üye Ekle</a>
+                </li>
+                <li class="m-2 pb-5">
+                    <a class="btn btn-danger" asp-action="UserrIndex" asp-route-id="null">Üye Sil - Güncelle</a>
+                </li>
+            </ul>
+        </div>
+
+
+        
+            
+            
+        <br />
+        <br />
+        <br />
+
+    }

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,8 +25,10 @@
 
 </head>
 <body>
-    
 
+    @{
+        string admin = "utku.bilgin@ogr.sakarya.edu.tr";
+    }
     @RenderSection("MessageBox", false)
 
     <header>
@@ -46,22 +53,32 @@
                                     <li>
                                         <a href="/AnaSayfa/AboutMe">About Me</a>
                                     </li>
+                                    <li>
+                                        <a href="/AnaSayfa/Api">API Service</a>
+                                    </li>
+                                    <li>
+                                        @if (@UserManager.GetUserName(User) == admin)
+                                        {
+                                            <a class="navbar-brand" asp-area="" asp-controller="Admin" asp-action="Index">Admin Panel</a>
+                                        }
+                                        else
+                                        {
+                                            <a @*class="navbar-brand" asp-area="" asp-controller="" asp-action=""*@>Üye</a>
+                                        }
+                                    </li>
                                     @*<li>
-                                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebProje</a>
-                                    </li>*@
+                                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebProje</a>
+                                        </li>*@
                                     <li>
                                         <a class="navbar-brand" asp-area="" asp-controller="AnaSayfa" asp-action="Login">Log In - Log Out</a>
                                     </li>
-                                    <li>
-                                        
-                                        @*<partial name="_LoginPartial.cshtml" />*@
-                                    </li>
+                                    
                                 </ul>
                             </nav>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
