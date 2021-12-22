@@ -33,47 +33,57 @@
         }
 </style>
 
-<form method="post" asp-action="Create" autocomplete="off">
-    <div class="container shadow col-lg-8" style="border-radius: 20px; background-color: #f2f2f2; padding: 20px;">
-        <div class="form-group">
-            <label style="font-size:18px">Konu Başlığı</label>
-            <input type="hidden" asp-for="Id" />
-            <input type="text" asp-for="KonuBasligi" placeholder="KonuBasligi" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>İçerik</label>
-            <input type="text" asp-for="Icerik" placeholder="Icerik" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Açıklama</label>
-            <input type="text" asp-for="Aciklama" placeholder="Aciklama" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Resim Url</label>
-            <input type="text" asp-for="ContentResimUrl" placeholder="ContentResimUrl" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Kategori ID</label>
-            
-            
-            <select asp-for="CategoryId">
-                <option selected disabled>Kategori Seçiniz</option>
-                @foreach (var item in categori)
-                {
-                    <option value="@item.Id">@item.CategoryName</option>
-                }
-
-            </select>
-        </div>
-        <div class="form-group">
-            @if (Model.Id == 0)
-            {
-                <button type="submit" class="btn btn-primary">Ekle</button>
-            }
-            else
-            {
-                <button type="submit" class="btn btn-primary">Güncelle</button>
-            }
-        </div>
+<div>
+    <div class="pt-5">
+        <h1 style="font-weight:800">
+            İçerik Ekleme - Güncelleme Sayfası
+        </h1>
     </div>
-</form>
+    <div class="container p-3" style="background-color:lightgray;border-radius:16px;">
+        <form method="post" asp-action="Create" autocomplete="off">
+            <div class="container shadow col-lg-8" style="border-radius: 20px; background-color: #f2f2f2; padding: 20px;">
+                <div class="form-group">
+                    <label style="font-size:18px">Konu Başlığı</label>
+                    <input type="hidden" asp-for="Id" />
+                    <input type="text" asp-for="KonuBasligi" placeholder="KonuBasligi" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>İçerik</label>
+                    <input type="text" asp-for="Icerik" placeholder="Icerik" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <input type="text" asp-for="Aciklama" placeholder="Aciklama" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Resim Url</label>
+                    <input type="text" asp-for="ContentResimUrl" value="/lib/bootstrap/dist/images/fevicon.png" placeholder="ContentResimUrl" class="form-control" />
+                    
+                </div>
+                <div class="form-group">
+                    <label>Kategori ID</label>
+
+
+                    <select asp-for="CategoryId">
+                        <option selected disabled>Kategori Seçiniz</option>
+                        @foreach (var item in categori)
+                        {
+                            <option value="@item.Id">@item.CategoryName</option>
+                        }
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    @if (Model.Id == 0)
+                    {
+                        <button type="submit" class="btn btn-primary">Ekle</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-primary">Güncelle</button>
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

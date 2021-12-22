@@ -1,5 +1,26 @@
-﻿@{
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-utku
+
+
+
+Home -> Index
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h1>@localizer["HelloWorld"]</h1>
+<h1>@ViewData["HelloWorld"]</h1>
+<br />
+<br />
+<br />
+<br />

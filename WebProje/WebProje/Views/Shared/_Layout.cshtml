@@ -1,7 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.Extensions.Localization
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@inject IStringLocalizer<lang> lang
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,13 +68,13 @@
                                             <a @*class="navbar-brand" asp-area="" asp-controller="" asp-action=""*@>Üye</a>
                                         }
                                     </li>
-                                    @*<li>
-                                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebProje</a>
-                                        </li>*@
                                     <li>
-                                        <a class="navbar-brand" asp-area="" asp-controller="AnaSayfa" asp-action="Login">Log In - Log Out</a>
+                                        <partial name="_Culture" />
                                     </li>
-                                    
+                                    <li>
+                                        <a class="navbar-brand" asp-area="" asp-controller="AnaSayfa" asp-action="Login">Log In - Log Out - Sign Up</a>
+                                    </li>
+
                                 </ul>
                             </nav>
                         </div>

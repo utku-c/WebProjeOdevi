@@ -138,7 +138,7 @@ namespace WebProje.Controllers
         }
         public async Task<IActionResult> KategoriDelete(int Id)
         {
-            var user = await _db.User.FindAsync(Id);
+            var user = await _db.Kategori.FindAsync(Id);
             _db.Remove(user);
             await _db.SaveChangesAsync();
             // yaptığımız değişiklikleri kaydediyoruz

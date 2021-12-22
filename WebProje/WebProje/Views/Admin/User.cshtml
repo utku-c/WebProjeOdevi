@@ -1,52 +1,54 @@
-﻿<h1>
-    Admin -> User
-</h1>
-
-@model User
+﻿@model User
 @{
     string dt = ViewBag.saat;
 }
-
-<form method="post" asp-action="UserCreate" autocomplete="off">
-    <div class="container shadow col-lg-8" style="border-radius: 20px; background-color: #f2f2f2; padding: 20px;">
-        <div class="form-group">
-            <label style="font-size:18px">Ad</label>
-            <input type="hidden" asp-for="Id" />
-            <input type="text" asp-for="Ad" placeholder="Adınızı girin" class="form-control" />
+<div class="pt-5">
+    <h1 style="font-weight:800">
+        User Ekleme - Güncelleme Sayfası
+    </h1>
+</div>
+<div class="container p-3" style="background-color:lightgray;border-radius:16px;">
+    <form method="post" asp-action="UserCreate" autocomplete="off">
+        <div class="container shadow col-lg-8" style="border-radius: 20px; background-color: #f2f2f2; padding: 20px;">
+            <div class="form-group">
+                <label style="font-size:18px">Ad</label>
+                <input type="hidden" asp-for="Id" />
+                <input type="text" asp-for="Ad" placeholder="Adınızı girin" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Soyad</label>
+                <input type="text" asp-for="Soyad" placeholder="Soyadınızı girin" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" asp-for="Email" placeholder="Email Adresinizi girin" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Doğum Tarih</label>
+                <input type="date" asp-for="DogumTarih" placeholder="Doğum Tarihinizi Girin" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Kayit Tarihi</label>
+                <input type="text" asp-for="KayitTarih" value="@dt" placeholder="Kayıt Tarihini Girin" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Resim Url</label>
+                <input type="text" asp-for="ResimUrl" placeholder="Resim Url" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Açıklama</label>
+                <input type="text" asp-for="Aciklama" placeholder="Açıklama" class="form-control" />
+            </div>
+            <div class="form-group">
+                @if (Model.Id == 0)
+                {
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                }
+            </div>
         </div>
-        <div class="form-group">
-            <label>Soyad</label>
-            <input type="text" asp-for="Soyad" placeholder="Soyadınızı girin" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" asp-for="Email" placeholder="Email Adresinizi girin" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Doğum Tarih</label>
-            <input type="date" asp-for="DogumTarih" placeholder="Doğum Tarihinizi Girin" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Kayit Tarihi</label>
-            <input type="text" asp-for="KayitTarih" value="@dt" placeholder="Kayıt Tarihini Girin" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Resim Url</label>
-            <input type="text" asp-for="ResimUrl" placeholder="Resim Url" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Açıklama</label>
-            <input type="text" asp-for="Aciklama" placeholder="Açıklama" class="form-control" />
-        </div>
-        <div class="form-group">
-            @if (Model.Id == 0)
-            {
-                <button type="submit" class="btn btn-primary">Ekle</button>
-            }
-            else
-            {
-                <button type="submit" class="btn btn-primary">Güncelle</button>
-            }
-        </div>
-    </div>
-</form>
+    </form>
+</div>
