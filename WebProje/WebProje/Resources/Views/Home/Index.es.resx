@@ -117,6 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Antakya" xml:space="preserve">
+    <value>Antioquía</value>
+  </data>
+  <data name="Ben" xml:space="preserve">
+    <value>I</value>
+  </data>
+  <data name="BenKimim" xml:space="preserve">
+    <value>Quién soy</value>
+  </data>
+  <data name="Benp1" xml:space="preserve">
+    <value>Tengo un nivel de inglés muy bajo. Hago mi mejor esfuerzo para mejorar</value>
+  </data>
+  <data name="Benp10" xml:space="preserve">
+    <value>Kebab de papel, Doner, Kunefe</value>
+  </data>
+  <data name="Benp11" xml:space="preserve">
+    <value>Mis platos y postres favoritos</value>
+  </data>
+  <data name="Benp12" xml:space="preserve">
+    <value>Klaku Por Ĉiuj Miaj Projektoj</value>
+  </data>
+  <data name="Benp2" xml:space="preserve">
+    <value>Estoy trabajando en el desarrollo de programas móviles.</value>
+  </data>
+  <data name="Benp3" xml:space="preserve">
+    <value>Amo cocinar y comer.</value>
+  </data>
+  <data name="Benp4" xml:space="preserve">
+    <value>Mi naskiĝis la 16.01.2000 en Hatay / Antakya.</value>
+  </data>
+  <data name="Benp5" xml:space="preserve">
+    <value>Mi ricevis mian bazlernejon, mezlernejon kaj mezlernejan edukadon en Antakya.</value>
+  </data>
+  <data name="Benp6" xml:space="preserve">
+    <value>Nuntempe mi studas Komputilan Inĝenieradon ĉe Sakarya University.</value>
+  </data>
+  <data name="Benp7" xml:space="preserve">
+    <value>Puedes llegar a mis proyectos en esta dirección</value>
+  </data>
+  <data name="Benp8" xml:space="preserve">
+    <value>Kunefe</value>
+  </data>
+  <data name="Benp9" xml:space="preserve">
+    <value>Es un postre famoso de Hatay.
+Hay muchas variedades de este postre, que todos adoran.
+El mejor es el que tiene queso.</value>
+  </data>
   <data name="HelloWorld" xml:space="preserve">
     <value>Saluton mondo!!</value>
   </data>

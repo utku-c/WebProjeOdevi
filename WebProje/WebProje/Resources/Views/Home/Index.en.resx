@@ -117,6 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Antakya" xml:space="preserve">
+    <value>Antioch</value>
+  </data>
+  <data name="Ben" xml:space="preserve">
+    <value>I</value>
+  </data>
+  <data name="BenKimim" xml:space="preserve">
+    <value>Who am I</value>
+  </data>
+  <data name="Benp1" xml:space="preserve">
+    <value>I have a very low level of English. I do my best to improve</value>
+  </data>
+  <data name="Benp10" xml:space="preserve">
+    <value>Paper Kebab, Doner, Kunefe</value>
+  </data>
+  <data name="Benp11" xml:space="preserve">
+    <value>My favorite dishes and desserts</value>
+  </data>
+  <data name="Benp12" xml:space="preserve">
+    <value>Click For All My Projects</value>
+  </data>
+  <data name="Benp2" xml:space="preserve">
+    <value>I am working on mobile program development.</value>
+  </data>
+  <data name="Benp3" xml:space="preserve">
+    <value>I love to cook and eat.</value>
+  </data>
+  <data name="Benp4" xml:space="preserve">
+    <value>I was born on 16.01.2000 in Hatay / Antakya.</value>
+  </data>
+  <data name="Benp5" xml:space="preserve">
+    <value>I received my primary school, secondary school and high school education in Antakya.</value>
+  </data>
+  <data name="Benp6" xml:space="preserve">
+    <value>I am currently studying Computer Engineering at Sakarya University.</value>
+  </data>
+  <data name="Benp7" xml:space="preserve">
+    <value>You can reach my projects at this address</value>
+  </data>
+  <data name="Benp8" xml:space="preserve">
+    <value>Kunefe</value>
+  </data>
+  <data name="Benp9" xml:space="preserve">
+    <value>It is a famous dessert of Hatay.
+There are many varieties of this dessert, which is loved by everyone.
+The best is the one with cheese.</value>
+  </data>
   <data name="HelloWorld" xml:space="preserve">
     <value>Hello World!!</value>
   </data>

@@ -48,6 +48,7 @@ namespace WebProje
                     {
                         new CultureInfo("en"),
                         new CultureInfo("es"),
+                        new CultureInfo("tr"),
                         new CultureInfo("fr")
 
                     };

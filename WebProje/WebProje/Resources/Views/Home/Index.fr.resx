@@ -117,6 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Antakya" xml:space="preserve">
+    <value>Antioche</value>
+  </data>
+  <data name="Ben" xml:space="preserve">
+    <value>Je</value>
+  </data>
+  <data name="BenKimim" xml:space="preserve">
+    <value>Bonjour le monde!!</value>
+  </data>
+  <data name="Benp1" xml:space="preserve">
+    <value>J'ai un très faible niveau d'anglais. je fais de mon mieux pour m'améliorer</value>
+  </data>
+  <data name="Benp10" xml:space="preserve">
+    <value>Papier Kebab, Doner, Kunefe</value>
+  </data>
+  <data name="Benp11" xml:space="preserve">
+    <value>Mes plats et desserts préférés</value>
+  </data>
+  <data name="Benp12" xml:space="preserve">
+    <value>Cliquez pour tous mes projets</value>
+  </data>
+  <data name="Benp2" xml:space="preserve">
+    <value>Je travaille sur le développement de programmes mobiles.</value>
+  </data>
+  <data name="Benp3" xml:space="preserve">
+    <value>J'aime cuisiner et manger.</value>
+  </data>
+  <data name="Benp4" xml:space="preserve">
+    <value>Je suis né le 16.01.2000 à Hatay / Antakya.</value>
+  </data>
+  <data name="Benp5" xml:space="preserve">
+    <value>J'ai fait mes études primaires, secondaires et secondaires à Antakya.</value>
+  </data>
+  <data name="Benp6" xml:space="preserve">
+    <value>J'étudie actuellement l'ingénierie informatique à l'Université Sakarya.</value>
+  </data>
+  <data name="Benp7" xml:space="preserve">
+    <value>Vous pouvez joindre mes projets à cette adresse</value>
+  </data>
+  <data name="Benp8" xml:space="preserve">
+    <value>Kunefe</value>
+  </data>
+  <data name="Benp9" xml:space="preserve">
+    <value>Hatay'ın meşhur bir tatlısıdır.
+Herkes tarafından çok sevilen bu tatlının çok çeşidi vardır.
+En güzeli peynirli olandır.</value>
+  </data>
   <data name="HelloWorld" xml:space="preserve">
     <value>Bonjour le monde</value>
   </data>

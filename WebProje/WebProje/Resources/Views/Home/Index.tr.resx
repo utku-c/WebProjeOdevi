@@ -118,12 +118,53 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Antakya" xml:space="preserve">
-    <value>Antioche</value>
+    <value>Antakya</value>
+  </data>
+  <data name="Ben" xml:space="preserve">
+    <value>Ben</value>
   </data>
   <data name="BenKimim" xml:space="preserve">
-    <value>Qui suis je</value>
+    <value>Ben Kimim</value>
+  </data>
+  <data name="Benp1" xml:space="preserve">
+    <value>Çok düşük seviyede ingilizcem var. Geliştirmek için elimden geleni yapıyorum</value>
+  </data>
+  <data name="Benp10" xml:space="preserve">
+    <value>Kağıt Kebabı, Döner, Künefe</value>
+  </data>
+  <data name="Benp11" xml:space="preserve">
+    <value>Favori yemeklerim ve tatlılarım</value>
+  </data>
+  <data name="Benp12" xml:space="preserve">
+    <value>Bütün Projelerim İçin Tıkla</value>
+  </data>
+  <data name="Benp2" xml:space="preserve">
+    <value>Mobil program geliştirme üzerine çalışıyorum.</value>
+  </data>
+  <data name="Benp3" xml:space="preserve">
+    <value>Yemek yapmayı ve yemeyi seviyorum.</value>
+  </data>
+  <data name="Benp4" xml:space="preserve">
+    <value>16.01.2000 yılında Hatay/Antakya'da doğdum</value>
+  </data>
+  <data name="Benp5" xml:space="preserve">
+    <value>İlk okul orta okul ve lise eğitimimi Antakyada aldım</value>
+  </data>
+  <data name="Benp6" xml:space="preserve">
+    <value>Şuan Sakarya Üniversitesinde Bilgisayar Mühendisliği okuyorum</value>
+  </data>
+  <data name="Benp7" xml:space="preserve">
+    <value>Bu adresten projelerime ulaşabilirsiniz</value>
+  </data>
+  <data name="Benp8" xml:space="preserve">
+    <value>Künefe</value>
+  </data>
+  <data name="Benp9" xml:space="preserve">
+    <value>Hatay'ın meşhur bir tatlısıdır.
+Herkes tarafından çok sevilen bu tatlının çok çeşidi vardır.
+En güzeli peynirli olandır.</value>
   </data>
   <data name="HelloWorld" xml:space="preserve">
-    <value>Bonjour le monde!! C</value>
+    <value>Selam Dünya!!</value>
   </data>
 </root>

@@ -34,7 +34,11 @@ namespace WebProje.Controllers
 
             var test = _localizer["HelloWorld"];
             ViewData["HelloWorld"] = test;
-            
+
+
+            // View data ile şeklinde de yollayabiliriz
+            //var test2 = _localizer["BenKimim"];
+            //ViewData["BenKimim"] = test2;
             return View();
         }
 

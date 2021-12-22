@@ -9,19 +9,25 @@ using System.Threading.Tasks;
 using WebProje.Data;
 using WebProje.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Localization;
+using Microsoft.AspNetCore.Localization;
 
 namespace WebProje.Controllers
 {
     
     public class AnaSayfaController : Controller
     {
+
+        private readonly IHtmlLocalizer<AnaSayfaController> _localizer;
+
         const string SessionAge = "_id";
         const string Indexx = "_id";
         private readonly WebProjeContext _db;
 
-        public AnaSayfaController(WebProjeContext db)
+        public AnaSayfaController(WebProjeContext db, IHtmlLocalizer<AnaSayfaController> localizer)
         {
             _db = db;
+            _localizer = localizer;
         }
 
         public IActionResult AnaSayfa(int? id)
@@ -148,8 +154,25 @@ namespace WebProje.Controllers
 
         public IActionResult AboutMe()
         {
+            //var test = _localizer["BenKimim"];
+            //ViewData["BenKimim"] = test;
             return View();
         }
+
+
+        public IActionResult Index()
+        {
+
+
+
+            return View();
+        }
+
+        public IActionResult MyProject()
+        {
+            return View();
+        }
+
         [Authorize]
         public IActionResult Login()
         {

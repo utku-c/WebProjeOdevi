@@ -272,3 +272,9 @@ C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\V
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\WebProje.Resources.Views.Shared._Culture.en.resources
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\WebProje.Resources.Views.Shared._Culture.es.resources
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\WebProje.Resources.Views.Shared._Culture.fr.resources
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\bin\Debug\net5.0\tr\WebProje.resources.dll
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\WebProje.Resources.Controllers.HomeController.tr.resources
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\WebProje.Resources.Views.Home.Index.tr.resources
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\WebProje.Resources.Views.Shared._Culture.tr.resources
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\tr\WebProje.resources.dll
+C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\MyProject.cshtml.g.cs

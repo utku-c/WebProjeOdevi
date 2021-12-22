@@ -126,4 +126,7 @@
   <data name="fr" xml:space="preserve">
     <value>Francés</value>
   </data>
+  <data name="tr" xml:space="preserve">
+    <value>Turco</value>
+  </data>
 </root>
