@@ -11,6 +11,7 @@ using WebProje.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.AspNetCore.Localization;
+using System.Net.Http;
 
 namespace WebProje.Controllers
 {
@@ -100,6 +101,8 @@ namespace WebProje.Controllers
             // Bizi tekrar index sayfasına döndürecek
 
         }
+        
+        
         public IActionResult Index(int id)
         {
             var icerik = from p in _db.Content
@@ -156,17 +159,10 @@ namespace WebProje.Controllers
         {
             //var test = _localizer["BenKimim"];
             //ViewData["BenKimim"] = test;
-            return View();
-        }
-
-
-        public IActionResult Index()
-        {
-
-
 
             return View();
         }
+
 
         public IActionResult MyProject()
         {

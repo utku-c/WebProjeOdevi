@@ -165,7 +165,6 @@ C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\V
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_AuthLayout.cshtml.g.cs
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\AnaSayfa.cshtml.g.cs
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\Index.cshtml.g.cs
-C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\AboutMe.cshtml.g.cs
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\AnaSayfa\Login.cshtml.g.cs
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\Content.cshtml.g.cs
 C:\Users\utkub\source\repos\YeniProje\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
