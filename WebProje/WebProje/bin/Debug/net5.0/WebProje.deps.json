@@ -331,6 +331,9 @@
           },
           "fr/WebProje.resources.dll": {
             "locale": "fr"
+          },
+          "tr/WebProje.resources.dll": {
+            "locale": "tr"
           }
         },
         "compile": {

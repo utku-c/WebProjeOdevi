@@ -7,7 +7,7 @@
    
 
     @{
-        string admin = "utku.bilgin@ogr.sakarya.edu.tr";
+         string admin = ViewBag.admin;
     }
 
     @if (@UserManager.GetUserName(User) == admin)
@@ -23,14 +23,13 @@
                 <li class="m-2">
                     <a class="btn btn-danger" asp-action="ContentIndex" asp-route-id="null">İçerik Güncelleme ve Silme</a>
                 </li>
-
                 <li class="m-2">
                     <a class="btn btn-danger" asp-action="Kategori" asp-route-id="null">Kategori Ekle</a>
                 </li>
-                <li class="m-2">
+                <li class="m-2 pb-5">
                     <a class="btn btn-danger" asp-action="KategoriIndex" asp-route-id="null">Kategori Sil - Güncelle</a>
                 </li>
-                <li class="m-2">
+                @*<li class="m-2">
                     <a class="btn btn-danger" asp-action="Content" asp-route-id="null">Yorum Sil</a>
                 </li>
                 <li class="m-2">
@@ -38,7 +37,7 @@
                 </li>
                 <li class="m-2 pb-5">
                     <a class="btn btn-danger" asp-action="UserrIndex" asp-route-id="null">Üye Sil - Güncelle</a>
-                </li>
+                </li>*@
             </ul>
         </div>
 

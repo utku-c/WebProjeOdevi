@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FEV9tkPlbLYFZwMextWQZtBm39zvNHKt/4w30G2tJamNCkNGB7tV8CJwSR61P2+F2UrPYF0yiuAu5kwReosgEQ==",
+  "dgSpecHash": "8WdJwIArsJN6/yo6bI0jK5KzIHq9Wt2bkaq6UWOoD95Qez0AneyxRxQFut5zE5lVMecBAcwwuARhrkn/hhgX9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\utkub\\source\\repos\\YeniProje\\WebProje\\WebProje\\WebProje.csproj",
+  "projectFilePath": "C:\\Users\\utkub\\source\\repos\\GitHub\\WebProje\\WebProje\\WebProje.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\utkub\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\utkub\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.12\\microsoft.aspnetcore.cryptography.internal.5.0.12.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\utkub\\source\\repos\\YeniProje\\WebProje\\WebProje\\WebProje.csproj": {}
+    "C:\\Users\\utkub\\source\\repos\\GitHub\\WebProje\\WebProje\\WebProje.csproj": {}
   },
   "projects": {
-    "C:\\Users\\utkub\\source\\repos\\YeniProje\\WebProje\\WebProje\\WebProje.csproj": {
+    "C:\\Users\\utkub\\source\\repos\\GitHub\\WebProje\\WebProje\\WebProje.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\utkub\\source\\repos\\YeniProje\\WebProje\\WebProje\\WebProje.csproj",
+        "projectUniqueName": "C:\\Users\\utkub\\source\\repos\\GitHub\\WebProje\\WebProje\\WebProje.csproj",
         "projectName": "WebProje",
-        "projectPath": "C:\\Users\\utkub\\source\\repos\\YeniProje\\WebProje\\WebProje\\WebProje.csproj",
+        "projectPath": "C:\\Users\\utkub\\source\\repos\\GitHub\\WebProje\\WebProje\\WebProje.csproj",
         "packagesPath": "C:\\Users\\utkub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\utkub\\source\\repos\\YeniProje\\WebProje\\WebProje\\obj\\",
+        "outputPath": "C:\\Users\\utkub\\source\\repos\\GitHub\\WebProje\\WebProje\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

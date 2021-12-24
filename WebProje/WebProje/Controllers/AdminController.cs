@@ -23,6 +23,8 @@ namespace WebProje.Controllers
         [Authorize]
         public IActionResult Index()
         {
+            string admn = "utku.bilgin@ogr.sakarya.edu.tr";
+            ViewBag.admin = admn; 
             return View();
         }
 
